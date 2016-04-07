@@ -1,1 +1,1 @@
-angular.module("autoEscola", []);
+angular.module("autoEscola", ["ngRoute"]);
