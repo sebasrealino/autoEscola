@@ -1,9 +1,20 @@
 angular.module("autoEscola").config(function ($routeProvider){
-	$routeProvider.when("/cadastrarQuestoes", {
-		templateUrl: "view/cadastrarQuestoes"
+	$routeProvider.when("/startLegislacao", {
+		templateUrl: "view/startLegislacao.html",
+
 	});
-	$routeProvider.when("/mainView", {
-		templateUrl: "view/mainView"
+	$routeProvider.when("/quiz", {
+		templateUrl: "view/quiz.html",
+		controller: "quizControl",
 	});
+	$routeProvider.when("/admin", {
+		templateUrl: "view/admin.html",
+	});
+	$routeProvider.when("/main", {
+		templateUrl: "view/main.html",
+	});
+	$routeProvider.otherwise({redirectTo: "/startLegislacao"});
+
 
 });
+

@@ -1,4 +1,4 @@
-angular.module("autoEscola").controller("listaTelefonicaControl", function ($scope){
-	$scope.app = "Lista Telefonica";
-	
+angular.module("autoEscola").controller("mainViewControl", function ($scope){
+	$scope.app = "Auto Escola";
+	$scope.quizName = "Quiz";
 });
