@@ -9,6 +9,7 @@ angular.module("autoEscola").config(function ($routeProvider){
 	});
 	$routeProvider.when("/admin", {
 		templateUrl: "view/admin.html",
+		controller: "adminControl",
 	});
 	$routeProvider.when("/main", {
 		templateUrl: "view/main.html",
