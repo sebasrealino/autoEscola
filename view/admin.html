@@ -1,31 +1,34 @@
 <div>
 	<h2>Área admin</h2>
+{{questions}}
 	<table class="jumbotron">
-	<tr>
-		<th>Questao:</th>
-		<th><input class="form-control" type="text" ng-model="questions.questionText" placeholder="Pergunta da questão" ></input> </th>
+
+	<th>Questao:</th>
+	<th><input class="form-control" type="text" ng-model="question.questionText" placeholder="Pergunta da questão" ></input> </th>
+
+	<tr ng-repeat="quest in questions">
+		<tr>
+			<td><input type="checkbox" ng-checked="quest.selecionado"></input></td>
+			<td><input class="form-control" type="text" ng-model="question.alternative1"  placeholder="Primeira alternativa" ></input></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" ng-checked="checkSelecionado()"></input></td>
+			<td><input class="form-control" type="text" ng-model="question.alternative1"  placeholder="Primeira alternativa" ></input></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" unchecked value="1"></input></td>
+			<td><input class="form-control" type="text" ng-model="question.alternative2" placeholder="Segunda alternativa" ></input></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" value="1"></input></td>
+			<td><input class="form-control" type="text" ng-model="question.alternative3" placeholder="Terceira alternativa" ></input></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" checked value="1"></input></td>
+			<td><input class="form-control" type="text" checked=1 ng-model="question.alternative4" placeholder="Quarta alternativa" ></input></td>
+		</tr>
 	</tr>
-	<tr >
-		<tr>
-			<td><input type="checkbox" value="1"></input></td>
-			<td><input class="form-control" type="text" ng-model="questions.alternative1" placeholder="Primeira alternativa" ></input></td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" value="1"></input></td>
-			<td><input class="form-control" type="text" ng-model="alternative2" placeholder="Segunda alternativa" ></input></td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" value="1"></input></td>
-			<td><input class="form-control" type="text" ng-model="alternative3" placeholder="Terceira alternativa" ></input></td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" value="1"></input></td>
-			<td><input class="form-control" type="text" ng-model="questions.alternative4" placeholder="Quarta alternativa" ></input></td>
-		</tr>
-	</tr>
-	
-
-
-
 	</table>
-</div>
+
+	<a class="btn btn-primary btn-xl page-scroll"  ng-click="adicionarQuestao(question)">Adicionar Questão</a>
+	</div>
