@@ -1,34 +1,36 @@
 <div>
 	<h2>Área admin</h2>
 {{questions}}
-	<table class="jumbotron">
 
-	<th>Questao:</th>
-	<th><input class="form-control" type="text" ng-model="question.questionText" placeholder="Pergunta da questão" ></input> </th>
+	<form name="addQuestionForm">
+		<table class="jumbotron">
 
-	<tr ng-repeat="quest in questions">
+		<th>Questao:</th>
+		<th><input class="form-control" type="text" ng-model="question.questionText" placeholder="Pergunta da questão" ng-required="true" ></input> </th>
 		<tr>
-			<td><input type="checkbox" ng-checked="quest.selecionado"></input></td>
-			<td><input class="form-control" type="text" ng-model="question.alternative1"  placeholder="Primeira alternativa" ></input></td>
+			<tr>
+				<td><input  type="radio" name="rightQuestion"  ng-model="question.correctAlternative" value="1" ng-required="true"></input></td>
+				<td><input class="form-control" type="text" ng-model="question.alternative1" placeholder="Primeira alternativa" ng-required="true"></input></td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="rightQuestion" ng-model="question.correctAlternative" value="2" value="1" ng-required="true"></input></td>
+				<td><input class="form-control" type="text" ng-model="question.alternative2"placeholder="Segunda alternativa" ng-required="true"></input></td>
+			</tr>
+			<tr>
+				<td><input type="radio" ng-model="question.correctAlternative" value="3" ng-required="true"></input></td>
+				<td><input class="form-control" type="text" ng-model="question.alternative3" placeholder="Terceira alternativa" ng-required="true"></input></td>
+			</tr>
+			<tr>
+				<td><input type="radio" ng-model="question.correctAlternative" value="4" ng-required="true"></input></td>
+				<td><input class="form-control" type="text" checked=1 ng-model="question.alternative4"  placeholder="Quarta alternativa" ng-required="true"></input></td>
+			</tr>
 		</tr>
-		<tr>
-			<td><input type="checkbox" ng-checked="checkSelecionado()"></input></td>
-			<td><input class="form-control" type="text" ng-model="question.alternative1"  placeholder="Primeira alternativa" ></input></td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" unchecked value="1"></input></td>
-			<td><input class="form-control" type="text" ng-model="question.alternative2" placeholder="Segunda alternativa" ></input></td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" value="1"></input></td>
-			<td><input class="form-control" type="text" ng-model="question.alternative3" placeholder="Terceira alternativa" ></input></td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" checked value="1"></input></td>
-			<td><input class="form-control" type="text" checked=1 ng-model="question.alternative4" placeholder="Quarta alternativa" ></input></td>
-		</tr>
-	</tr>
+	</form>
 	</table>
+	<div class="">
+		<a class="btn btn-primary btn-xl page-scroll" ng-disabled="addQuestionForm.$invalid" ng-click="adicionarQuestao(question)">Adicionar Questão</a>
+		<hr>
+		<a href="#/admin/listQuestions">Visualizar Quesões</a>
+	</div>
 
-	<a class="btn btn-primary btn-xl page-scroll"  ng-click="adicionarQuestao(question)">Adicionar Questão</a>
 	</div>

@@ -11,6 +11,12 @@ angular.module("autoEscola").config(function ($routeProvider){
 		templateUrl: "view/admin.html",
 		controller: "adminControl",
 	});
+
+	$routeProvider.when("/admin/listQuestions", {
+		templateUrl: "view/listQuestions.html",
+		controller: "adminControl",
+	});
+
 	$routeProvider.when("/main", {
 		templateUrl: "view/main.html",
 	});
@@ -18,4 +24,3 @@ angular.module("autoEscola").config(function ($routeProvider){
 
 
 });
-

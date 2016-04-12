@@ -4,12 +4,9 @@ angular.module("autoEscola").controller("adminControl", function ($scope){
 	$scope.questions = [];
 	$scope.adicionarQuestao = function (question){
 		$scope.questions.push(angular.copy(question));
-
+		cont = questions.lenght;
+		question.id = cont;
 		delete $scope.question;
 	};
-	$scope.checkSelecionado = function (){
-		return False;
-	};
-
 
 });
